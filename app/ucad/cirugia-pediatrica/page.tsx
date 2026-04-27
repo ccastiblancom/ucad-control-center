@@ -30,7 +30,7 @@ export default function CirugiaPediatricaDashboard() {
             <ArrowLeft className="w-5 h-5 text-slate-600" />
           </Link>
           <div>
-            <h1 className="text-xl font-bold text-[#2563eb] uppercase tracking-tight">
+            <h1 className="text-xl font-bold text-[#324D6D] uppercase tracking-tight">
               Unidad Clínica Alto Desempeño Cirugía Pediátrica
             </h1>
             <p className="text-sm text-slate-600 font-medium">Torre de Control UCAD – Cirugía Pediátrica</p>
@@ -51,30 +51,30 @@ export default function CirugiaPediatricaDashboard() {
           <div 
             onClick={() => setActiveTab("excelencia")}
             className={`py-3 px-4 rounded-lg cursor-pointer transition-colors ${
-              activeTab === "excelencia" ? "bg-[#2563eb] text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"
+              activeTab === "excelencia" ? "bg-[#324D6D] text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"
             }`}
           >
-            Excelencia Clínica
+            Resultados Clínicos
           </div>
           <div 
             onClick={() => setActiveTab("integridad")}
             className={`py-3 px-4 rounded-lg cursor-pointer transition-colors ${
-              activeTab === "integridad" ? "bg-[#2563eb] text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"
+              activeTab === "integridad" ? "bg-[#324D6D] text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"
             }`}
           >
-            Integridad y Humanización
+            Calidad de Proceso
           </div>
           <div 
             onClick={() => setActiveTab("investigacion")}
             className={`py-3 px-4 rounded-lg cursor-pointer transition-colors ${
-              activeTab === "investigacion" ? "bg-[#2563eb] text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"
+              activeTab === "investigacion" ? "bg-[#324D6D] text-white shadow-sm" : "text-slate-600 hover:bg-slate-100"
             }`}
           >
-            Investigación y Docencia
+            Experiencia al cliente
           </div>
         </div>
 
-        {/* VISTA: EXCELENCIA CLÍNICA */}
+        {/* VISTA: RESULTADOS CLÍNICOS */}
         {activeTab === "excelencia" && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link href="/ucad/cirugia-pediatrica/tasa-iso" className="block transition-transform hover:-translate-y-1">
@@ -101,7 +101,7 @@ export default function CirugiaPediatricaDashboard() {
           </div>
         )}
 
-        {/* VISTA: INTEGRIDAD Y HUMANIZACIÓN */}
+        {/* VISTA: CALIDAD DE PROCESO */}
         {activeTab === "integridad" && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link href="/ucad/cirugia-pediatrica/calidad-vida-alta" className="block transition-transform hover:-translate-y-1">
@@ -119,7 +119,7 @@ export default function CirugiaPediatricaDashboard() {
           </div>
         )}
 
-        {/* VISTA: INVESTIGACIÓN Y DOCENCIA */}
+        {/* VISTA: EXPERIENCIA AL CLIENTE */}
         {activeTab === "investigacion" && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link href="/ucad/cirugia-pediatrica/publicaciones" className="block transition-transform hover:-translate-y-1">
