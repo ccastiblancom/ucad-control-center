@@ -37,10 +37,13 @@ export default function CirugiaPediatricaDashboard() {
           </div>
         </div>
 
-        {/* SECCIÓN CENTRAL: ECOSISTEMA */}
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-slate-200 mb-8 flex flex-col items-center justify-center min-h-[200px]">
-           <Activity className="w-12 h-12 text-[#2563eb] mb-4 opacity-20" />
-           <p className="text-slate-400 text-sm font-medium">Monitor de Resultados Quirúrgicos de Alta Complejidad</p>
+        {/* SECCIÓN CENTRAL: ECOSISTEMA (IMAGEN ACTUALIZADA) */}
+        <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-sm border border-slate-200 mb-8 flex flex-col items-center justify-center overflow-hidden">
+           <img 
+              src="/Ecosistema-Cirugia.jpg" 
+              alt="Ecosistema UCAD Cirugía Pediátrica" 
+              className="w-full max-w-3xl h-auto object-contain rounded-xl"
+           />
         </div>
 
         {/* Navegación de Pestañas */}
@@ -72,72 +75,67 @@ export default function CirugiaPediatricaDashboard() {
         </div>
 
         {/* VISTA: EXCELENCIA CLÍNICA */}
-{activeTab === "excelencia" && (
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <Link href="/ucad/cirugia-pediatrica/tasa-iso" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="Tasa de infección de sitio operatorio < 1%" icono={<ShieldAlert className="w-6 h-6" />} colorFondo="bg-[#2563eb]" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/tiempo-atencion-apendicitis" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="Tiempo de atención a Urgencia en apendicitis" icono={<Clock className="w-6 h-6" />} colorFondo="bg-blue-500" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/aseguramiento-consentimientos" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="Aseguramiento consentimientos informados" icono={<FileText className="w-6 h-6" />} colorFondo="bg-indigo-600" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/reoperacion-no-planeada" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="% reoperación no planeada (<5%)" icono={<RefreshCw className="w-6 h-6" />} colorFondo="bg-sky-500" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/reingreso-30-dias" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="% reingreso a 30 días (meta < 2%)" icono={<RotateCcw className="w-6 h-6" />} colorFondo="bg-cyan-600" />
-    </Link>
-    {/* ACTUALIZADO: Enlace a Porcentaje de Complicaciones */}
-    <Link href="/ucad/cirugia-pediatrica/complicaciones" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="% de complicaciones (meta <5%)" icono={<AlertTriangle className="w-6 h-6" />} colorFondo="bg-amber-500" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/mortalidad" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="% mortalidad (0%)" icono={<Activity className="w-6 h-6" />} colorFondo="bg-slate-600" />
-    </Link>
-  </div>
-)}
+        {activeTab === "excelencia" && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/ucad/cirugia-pediatrica/tasa-iso" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="Tasa de infección de sitio operatorio < 1%" icono={<ShieldAlert className="w-6 h-6" />} colorFondo="bg-[#2563eb]" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/tiempo-atencion-apendicitis" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="Tiempo de atención a Urgencia en apendicitis" icono={<Clock className="w-6 h-6" />} colorFondo="bg-blue-500" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/aseguramiento-consentimientos" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="Aseguramiento consentimientos informados" icono={<FileText className="w-6 h-6" />} colorFondo="bg-indigo-600" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/reoperacion-no-planeada" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="% reoperación no planeada (<5%)" icono={<RefreshCw className="w-6 h-6" />} colorFondo="bg-sky-500" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/reingreso-30-dias" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="% reingreso a 30 días (meta < 2%)" icono={<RotateCcw className="w-6 h-6" />} colorFondo="bg-cyan-600" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/complicaciones" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="% de complicaciones (meta <5%)" icono={<AlertTriangle className="w-6 h-6" />} colorFondo="bg-amber-500" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/mortalidad" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="% mortalidad (0%)" icono={<Activity className="w-6 h-6" />} colorFondo="bg-slate-600" />
+            </Link>
+          </div>
+        )}
 
-{/* VISTA: INTEGRIDAD Y HUMANIZACIÓN */}
-{activeTab === "integridad" && (
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <Link href="/ucad/cirugia-pediatrica/calidad-vida-alta" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="75 puntos en el ítem más alto de calidad de vida" icono={<Heart className="w-6 h-6" />} colorFondo="bg-[#2563eb]" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/cumplimiento-dolor" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="95% cumplimiento uso escalas de dolor en recuperación" icono={<Smile className="w-6 h-6" />} colorFondo="bg-blue-500" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/cumplimiento-pedsql" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="95% cumplimiento uso de la escala PEDSqL" icono={<ClipboardList className="w-6 h-6" />} colorFondo="bg-indigo-500" />
-    </Link>
-    {/* ACTUALIZADO: Enlace a NPS y PQRS */}
-    <Link href="/ucad/cirugia-pediatrica/nps-pqrs" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="NPS (meta > 70), PQRS" icono={<MessageSquare className="w-6 h-6" />} colorFondo="bg-cyan-600" />
-    </Link>
-  </div>
-)}
+        {/* VISTA: INTEGRIDAD Y HUMANIZACIÓN */}
+        {activeTab === "integridad" && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/ucad/cirugia-pediatrica/calidad-vida-alta" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="75 puntos en el ítem más alto de calidad de vida" icono={<Heart className="w-6 h-6" />} colorFondo="bg-[#2563eb]" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/cumplimiento-dolor" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="95% cumplimiento uso escalas de dolor en recuperación" icono={<Smile className="w-6 h-6" />} colorFondo="bg-blue-500" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/cumplimiento-pedsql" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="95% cumplimiento uso de la escala PEDSqL" icono={<ClipboardList className="w-6 h-6" />} colorFondo="bg-indigo-500" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/nps-pqrs" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="NPS (meta > 70), PQRS" icono={<MessageSquare className="w-6 h-6" />} colorFondo="bg-cyan-600" />
+            </Link>
+          </div>
+        )}
 
-{/* VISTA: INVESTIGACIÓN Y DOCENCIA */}
-{activeTab === "investigacion" && (
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <Link href="/ucad/cirugia-pediatrica/publicaciones" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="N° de publicaciones en revistas Q1, Q2 y Q3" icono={<BookOpen className="w-6 h-6" />} colorFondo="bg-[#2563eb]" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/participacion-congresos" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="N° de participaciones en congresos (como expositores)" icono={<Presentation className="w-6 h-6" />} colorFondo="bg-blue-600" />
-    </Link>
-    <Link href="/ucad/cirugia-pediatrica/calificacion-minciencias" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="Calificación del Equipo de investigación de Minciencias" icono={<Award className="w-6 h-6" />} colorFondo="bg-indigo-600" />
-    </Link>
-    {/* ACTUALIZADO: Enlace a Cambios Clínicos */}
-    <Link href="/ucad/cirugia-pediatrica/cambios-clinicos" className="block transition-transform hover:-translate-y-1">
-      <IndicatorCard titulo="N° Cambios clínicos por causa de investigaciones" icono={<Lightbulb className="w-6 h-6" />} colorFondo="bg-amber-500" />
-    </Link>
-  </div>
-)}
-
-        {/* ... (Las demás pestañas se mantienen con la misma estructura) */}
+        {/* VISTA: INVESTIGACIÓN Y DOCENCIA */}
+        {activeTab === "investigacion" && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Link href="/ucad/cirugia-pediatrica/publicaciones" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="N° de publicaciones en revistas Q1, Q2 y Q3" icono={<BookOpen className="w-6 h-6" />} colorFondo="bg-[#2563eb]" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/participacion-congresos" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="N° de participaciones en congresos (como expositores)" icono={<Presentation className="w-6 h-6" />} colorFondo="bg-blue-600" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/calificacion-minciencias" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="Calificación del Equipo de investigación de Minciencias" icono={<Award className="w-6 h-6" />} colorFondo="bg-indigo-600" />
+            </Link>
+            <Link href="/ucad/cirugia-pediatrica/cambios-clinicos" className="block transition-transform hover:-translate-y-1">
+              <IndicatorCard titulo="N° Cambios clínicos por causa de investigaciones" icono={<Lightbulb className="w-6 h-6" />} colorFondo="bg-amber-500" />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
